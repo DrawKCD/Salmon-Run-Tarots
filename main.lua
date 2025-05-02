@@ -4,7 +4,7 @@
 --- PREFIX: salmonruntarot
 --- MOD_AUTHOR: [DrawKCD]
 --- MOD_DESCRIPTION: Replaces tarot cards with Salmon Run Foes
---- VERSION: 1.0.5
+--- VERSION: 1.1.0
 --- DEPENDENCIES: [malverk]
 
 AltTexture({ -- Salmon Run Tarot
