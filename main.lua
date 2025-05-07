@@ -4,7 +4,7 @@
 --- PREFIX: salmonruntarot
 --- MOD_AUTHOR: [DrawKCD]
 --- MOD_DESCRIPTION: Replaces tarot cards with Salmon Run Foes
---- VERSION: 1.1.0
+--- VERSION: 1.2.1
 --- DEPENDENCIES: [malverk]
 
 AltTexture({ -- Salmon Run Tarot
@@ -36,7 +36,7 @@ AltTexture({ -- Salmon Run Tarot
         c_emperor = {
             name = "Mothership",
 	    text = {
-                "Creates up to {C:attention}2{}",
+                "Creates up to {C:attention}#1#{}",
                 "random {C:tarot}Salmonid{} cards",
                 "{C:inactive}(Must have room)",
         }},
@@ -188,7 +188,7 @@ AltTexture({
         j_8_ball = {
             name = "Mr. Grizz",
             text = {
-                "{C:green}1 in 4{} chance for each",
+                "{C:green}#1# in #2#{} chance for each",
                 "played {C:attention}8{} to create a",
                 "{C:tarot}Salmonid{} card when scored",
                 "{C:inactive}(Must have room)",
@@ -220,7 +220,7 @@ AltTexture({
         j_fortune_teller = {
             name = "Overfisher",
             text = {
-                "{C:mult}+1{} Mult per {C:tarot}Salmonid{}",
+                "{C:mult}+#1#{} Mult per {C:tarot}Salmonid{}",
                 "card used this run",
                 "{C:inactive}(Currently {C:mult}+#2#{C:inactive})",
         }},
@@ -261,6 +261,25 @@ AltTexture({
         }},
     }
 })
+AltTexture({
+    key = 'salmonruntarot_texsoul', -- alt_tex key
+    set = 'Spectral', -- set to act upon
+    path = 'Tarots-Salmon.png', -- path of sprites
+    keys = {
+        'c_soul',
+    },
+    original_sheet = 'true',
+    loc_txt = { -- loc text name
+        name = 'Hugrfry',
+        text = {'Spectral Accomodation'}
+    },
+    localization = {
+        c_soul = {
+            name = "Hugefry",
+        },
+    },
+    soul = 'Enhancers-Salmon.png', -- path of floaters
+})
 TexturePack({ -- Salmon Run Tarot
     key = 'salmonruntarot_pack', -- texpack key
     textures = { -- keys of AltTextures in this TexturePack
@@ -269,6 +288,7 @@ TexturePack({ -- Salmon Run Tarot
         'salmonruntarot_texvoucher',
         'salmonruntarot_texjoker',
         'salmonruntarot_textag',
+        'salmonruntarot_texsoul',
     },
     loc_txt = { -- loc text name
     name = 'Salmon Run',
@@ -280,4 +300,20 @@ G.localization.descriptions.Other["purple_seal"].text = {
     "Creates a {C:tarot}Salmonid{} card",
     "when {C:attention}discarded",
     "{C:inactive}(Must have room)",
+}
+    -- omen globe description
+G.localization.descriptions.Voucher["v_omen_globe"].text = {
+    "{C:spectral}Spectral{} cards may",
+    "appear in any of",
+    "the {C:attention}Salmon Packs",
+}
+    -- tarot lable changes
+G.localization.misc.dictionary["b_stat_tarots"] = {
+    "Salmonid",
+}
+G.localization.misc.dictionary["k_plus_tarot"] = {
+    "+1 Salmonid",
+}
+G.localization.misc.dictionary["k_tarot"] = {
+    "Salmonid",
 }
